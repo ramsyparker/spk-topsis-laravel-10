@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;300;400;500;600;700;900&display=swap");
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.login {
+  height: 100vh;
+}
+
+.logo {
+  width: 155px;
+  height: 78px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: -0.07em;
+  color: #000000;
+  margin-bottom: 20px;
+}
+@media (max-width: 575.98px) {
+  .header h1  {
+      font-size: 20px;
+  }
+
+  .w-sm-75{
+    width: 75%;
+  }
+}
+
+.signin-box{
+/* From https://css.glass */
+background: rgba(34, 192, 231, 0.504);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.5px);
+-webkit-backdrop-filter: blur(5.5px);
+border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.login-form label {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.login-form input {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: #736A6A;
+
+}
+
+.password-container{
+  position: relative;
+}
+
+.pass-wrapper{
+  position: relative;
+}
+
+.pass-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  right: 6px;
+  top: 4px;
+}
+
+.login-form span {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 15px;
+  color: #ff1010;
+  margin-bottom: 20px;
+}
+
+.login-form .login-btn {
+  height: 46px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+
+.login-img {
+  position: absolute;
+  width: 588px;
+  height: 90%;
+  left: 122px;
+  top: 47px;
+  border: 3px solid #FFFFFF;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 41px;
+  margin-left: 150px;
+}
+
+@media (max-width: 1400px){
+  .login-img {
+      margin-left: -90px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header h1  {
+      font-size: 20px;
+  }
+  .pass-icon {
+      width: 15px;
+      height: 15px;
+      right: 6px;
+      top: 8px;
+  }
+  .login-form label{
+      font-size: 10px;
+  }
+  .login-form input {
+      font-size: 10px;
+  }
+  .login-form span {
+      font-size: 8px;
+  }
+  .login-btn{
+      font-size: 12px;
+  }
+  .google-btn{
+      font-size: 12px;
+  }
+}
