@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Exports\ExportCriteria;
@@ -16,12 +15,11 @@ class CriteriaController extends Controller
     public function index()
     {
         $criteria = Criteria::where('user_id', '=', auth()->user()->id)->get();
-        $columns = (new Criteria)->getTableColumns();
-
         return view('criteria', ['criteria' => $criteria]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $newCriteria = $request->except('_token');
         $request->validate([
             'name' => 'required|string',
@@ -42,19 +40,21 @@ class CriteriaController extends Controller
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
-    }
-        $gradeDataa = GradeAlternativeCriteria::insert($gradeData);
+        }
+        GradeAlternativeCriteria::insert($gradeData);
         
         return redirect()->route('criteria')->with('toast_success', 'Kriteria '.$request->name.' ditambahkan!');
     }
 
-    public function delete(Request $request){
+    public function delete(Request $request)
+    {
         $criteria = Criteria::find($request->id);
         $criteria->delete();
         return redirect()->route('criteria')->with('toast_success', 'Kriteria '.$criteria->name.' dihapus!');
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $oldCriteria = Criteria::find($request->id);
         $updatedCriteria = $request->except('_token');
         $oldCriteria->update($updatedCriteria);
@@ -73,7 +73,8 @@ class CriteriaController extends Controller
         return back()->with('toast_success', 'Sukses impor');
     }
 
-    public function getCriteriaTemplate(){
+    public function getCriteriaTemplate()
+    {
         return response()->download(public_path('template/templatecriteria.xlsx'), 'TemplateImpor.xlsx');
     }
 }

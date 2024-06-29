@@ -1,12 +1,15 @@
 <?php
-
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\FacebookController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CriteriaController;
@@ -16,9 +19,16 @@ use App\Http\Controllers\CalculationsController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\Auth\GoogleController; // Import GoogleController
 
+
+// Route for the landing page
+Route::get('/', [LandingPageController::class, 'index'])->name('landing');
+
 // Rute untuk Sign In
 Route::get('/signIn', [AuthController::class, 'index'])->name('signIn');
 Route::post('/signIn', [AuthController::class, 'authenticate'])->name('signin.auth');
+
+Route::get('login/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('login/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
 // Rute untuk login Google
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
@@ -66,7 +76,7 @@ Route::group(['prefix' => 'topsis', 'middleware' => ['auth']], function() {
     Route::get('/results', [ResultController::class, 'index'])->name('results');
 
     // Logout
-    Route::get('logout', [AuthController::class, 'logout'])->name('signin.logout');
+    Route::get('logout', [AuthController::class, 'logout'])->name('landing.logout');
 });
 
 // Verifikasi Email
@@ -89,6 +99,16 @@ Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestF
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
+// Rute untuk halaman profil
+Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+
+
+
+Route::post('/send-message', [ContactController::class, 'sendMessage'])->name('sendMessage');
 
 // Rute untuk menangani semua permintaan lainnya
 Route::any('/{any}', function () {

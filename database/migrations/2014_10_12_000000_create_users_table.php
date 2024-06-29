@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->enum('role', ['admin', 'member']); 
+            $table->string('facebook_id')->nullable();
+            $table->enum('role', ['admin', 'member'])->default('member');
             $table->timestamps();
         });
     }

@@ -32,18 +32,7 @@
       <div class="btn btn-success" id="add" data-bs-toggle="modal" data-bs-target="#addnew"><i
           class="ri-add-box-line"></i> Tambah Kriteria
       </div>
-
-      <a href="{{route('criteria.export.excel')}}" class="text-decoration-none">
-        <div class="btn btn-primary"><i class="ri-add-box-line"></i> Export Excel
-        </div>
-      </a>
-
-      <div class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#importModal"><i class="ri-add-box-line"></i>
-        Impor Kriteria
-      </div>
-
-    </div>
-
+    </div>  
     <div class="Produk mt-2 mb-2">
       @include('criteria-table', $criteria)
     </div>

@@ -39,21 +39,5 @@
             class="ri-sort-asc me-2"></i></i>Data Hasil Akhir</a>
       </li>
     </ul>
-    <ul class="list-unstyled px-3 d-flex flex-column gap-2">
-      <!-- Tautan Lupa Kata Sandi -->
-      <li class="rounded {{Request::segment(2) === 'forgot-password' ? 'active' : ''}} rounded-2">
-        <a href="{{route('password.request')}}"
-          class="text-decoration-none px-3 py-3 rounded rounded-2 d-flex align-items-baseline"><i
-            class="ri-lock-password-line me-2"></i>Lupa Kata Sandi</a>
-      </li>
-      <!-- Tautan Logout -->
-      <li class="rounded {{Request::segment(2) === 'logout' ? 'active' : ''}} rounded-2 ">
-        <a href="{{route('signin.logout')}}"
-          class="text-decoration-none px-3 py-3 rounded rounded-2 d-flex align-items-baseline"><i
-            class="ri-logout-circle-line me-2"></i>Logout</a>
-      </li>
-    </ul>
   </div>
-
-  <hr class="h-color mx-3" />
 </div>

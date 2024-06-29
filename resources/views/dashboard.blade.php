@@ -14,93 +14,20 @@
     </ol>
   </nav>
 </div>
-
 <!-- Menambahkan jumlah data -->
 <div class="data-count-box mt-2 mb-3">
   <div class="row">
     <div class="col-md-6">
       <div class="data-count-item p-3 bg-white rounded rounded-2 border">
-        <h4>Jumlah Data Kriteria</h4>
+        <h4>Jumlah Data Kriteria :</h4>
         <p class="fs-4">{{ $criteriaCount }}</p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="data-count-item p-3 bg-white rounded rounded-2 border">
-        <h4>Jumlah Data Alternatif</h4>
+        <h4>Jumlah Data Alternatif :</h4>
         <p class="fs-4">{{ $alternativesCount }}</p>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="content-box p-3 mt-3 rounded rounded-2 bg-white">
-  <div class="content rounded rounded-2 border border-1 p-3">
-    <div class="row row-gap-3">
-      <a href="{{route('criteria')}}" class="col-sm-6 card-dashboard text-decoration-none">
-        <div class="card ">
-          <div class="card-body  row justify-content-between align-items-center">
-            <div class="card-body-content col-9">
-              <h3 class="card-title">Data Kriteria</h3>
-              <p class="card-text text-secondary fw-light">Fitur ini digunakan untuk mengolah data kriteria seperti
-                menambah, memperbarui, atau menghapus data kriteria.</p>
-            </div>
-            <div class="col-2 col-sm-3 d-flex justify-content-center img-menu">
-              <i class="fs-1 bx bx-data "></i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{{route('alternatives')}}" class="col-sm-6 card-dashboard text-decoration-none">
-        <div class="card ">
-          <div class="card-body  row justify-content-between align-items-center">
-            <div class="card-body-content col-9">
-              <h3 class="card-title">Data Alternatif</h3>
-              <p class="card-text text-secondary fw-light">Fitur ini digunakan untuk mengolah data alternatif seperti
-                menambah, memperbarui, atau menghapus data alternatif.</p>
-            </div>
-            <div class="col-2 col-sm-3 d-flex justify-content-center img-menu"><i class="fs-1 ri-team-line me-2"></i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{{route('grades')}}" class="col-sm-6 card-dashboard text-decoration-none">
-        <div class="card ">
-          <div class="card-body  row justify-content-between align-items-center">
-            <div class="card-body-content col-9">
-              <h3 class="card-title">Data Penilaian</h3>
-              <p class="card-text text-secondary fw-light">Data penilaian yang digunakan untuk mengolah data penilaian
-                Metode TOPSIS.</p>
-            </div>
-            <div class="col-2 col-sm-3 d-flex justify-content-center img-menu"> <i class="fs-1 ri-survey-line"></i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="#" class="col-sm-6 card-dashboard text-decoration-none">
-        <div class="card ">
-          <div class="card-body  row justify-content-between align-items-center">
-            <div class="card-body-content col-9">
-              <h3 class="card-title">Data Perhitungan</h3>
-              <p class="card-text text-secondary fw-light">Data hasil perhitungan yang digunakan untuk melihat data
-                perhitungan sistem pendukung keputusan Topsis.</p>
-            </div>
-            <div class="col-2 col-sm-3 d-flex justify-content-center img-menu"><i class="fs-1 ri-calculator-line"></i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{{route('results')}}" class="col-sm-6 card-dashboard text-decoration-none">
-        <div class="card ">
-          <div class="card-body  row justify-content-between align-items-center">
-            <div class="card-body-content col-9">
-              <h3 class="card-title">Data Hasil Akhir</h3>
-              <p class="card-text text-secondary fw-light">Data hasil akhir yang digunakan untuk melihat data hasil
-                akhir sistem pendukung keputusan Topsis.</p>
-            </div>
-            <div class="col-2 col-sm-3 d-flex justify-content-center img-menu"><i class="ri-sort-asc me-2"></i> </div>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
 </div>

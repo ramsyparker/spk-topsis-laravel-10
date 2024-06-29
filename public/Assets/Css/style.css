@@ -6,14 +6,15 @@ body{
   scroll-behavior: smooth;
 }
 
-#side_nav{
-  background-color: #000;
+#side_nav {
+  background-color: #8261ee;
   max-width: 250px;
   min-width: 250px;
   font-weight: 400;
-  font-size: 16;
+  font-size: 16px;
   transition: all 0.3s;
 }
+
 
 .header-box{
 
