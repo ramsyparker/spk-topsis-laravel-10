@@ -37,4 +37,4 @@ class SignUpController extends Controller
     
         return redirect()->route('verification.notice')->with('toast_success', 'Silakan periksa email Anda untuk verifikasi.');
     }
-}    
+}

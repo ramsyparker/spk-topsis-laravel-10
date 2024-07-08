@@ -39,7 +39,7 @@ Route::get('/signUp', [SignUpController::class, 'index'])->name('signUp');
 Route::post('/signUp', [SignUpController::class, 'store'])->name('signUp.store');
 
 // Grup rute dengan prefix 'topsis' dan middleware 'auth'
-Route::group(['prefix' => 'topsis', 'middleware' => ['auth']], function() {
+Route::group(['prefix' => 'topsis', 'middleware' => ['auth','verified']], function() {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -79,7 +79,7 @@ Route::group(['prefix' => 'topsis', 'middleware' => ['auth']], function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('landing.logout');
 });
 
-// Verifikasi Email
+/// Verifikasi Email
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -93,6 +93,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Link verifikasi telah dikirim!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 
 // Rute Reset dan Lupa Password
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
