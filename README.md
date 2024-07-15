@@ -97,12 +97,13 @@ Here are some example commands you can use with this project:
 
 - Running tests:
   ```bash
-  php artisan test
+  php artisan serve
   ```
 
 - Compiling assets:
   ```bash
   npm run dev
+  npm run build 
   ```
 
 ## Troubleshooting
